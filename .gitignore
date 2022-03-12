@@ -4,3 +4,7 @@
 /.vagrant
 .phpunit.result.cache
 /database/database.sqlite
+
+test.ipynb
+*.txt
+!words_*.txt
