@@ -31,10 +31,12 @@ class ImportWordsCommand extends Command
     {
         $this->info('importing...');
 
+        DB::table('words')->truncate();
+
         $file = fopen("words_en.txt","r");
         while(! feof($file)){
             $word = fgets($file);
-            DB::table('words')->insert(['word' => $word]);
+            DB::table('words')->insert(['word' => trim($word)]);
         }
         fclose($file);
 
